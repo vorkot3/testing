@@ -1,0 +1,300 @@
+/*---------waveform----------*/
+#waveform{
+    width: 50%;
+    margin: 0 auto;
+}
+
+
+
+/*---------waarschuwing voor kleine schermen----------*/
+
+#sizeWarning, #sizeWarning2 {
+    display: none;
+    background: #000;
+    color: #fff;
+    width: 100vw;
+    height: 100vh;  
+    z-index: 9999;
+}
+
+#sizeWarning p, #sizeWarning2 p {
+    font-size: 2.5em;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+
+
+
+/*----------------Pagina 1 ----------------*/
+
+#startImg {
+    background-image: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(80,80,80,0.7) 49%, rgba(0,0,0,0.7) 100%), url(../img/agent.JPG);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+a {
+    cursor: pointer;
+}
+
+
+.startPage{
+   width: 100vw;
+   height: 100vh;
+   z-index: 1;
+}
+
+.content-container {
+    position: absolute;
+    top: 50%; 
+    left: 0;
+    width: 100%;
+}
+
+
+.playBtn img, .pauseBtn img {
+    width: 30px;
+    height: 30px;
+    margin-left: 50px;
+}
+
+.buttons {
+    text-align: center;
+}
+
+
+
+
+/*------------------------Pagina 2--------------------------*/
+
+#kantoorPagina {
+    overflow: hidden;
+}
+
+.reset{
+    position: fixed;
+    color: white;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+
+#pagina2 {
+    width: 100%;
+    height: 100%; 
+    
+}
+
+#backgroundImage {
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    display: block;
+}
+
+
+
+/*---------------------Hover effect----------------------*/
+
+
+
+.brilHover, .computerHover, .bordHover, .folderHover, .bordRechtsHover, .bakjeHover {
+    position: absolute;
+    z-index: 1;
+}
+
+
+.brilHover {
+    width: 70px;
+    height: 45px;
+    left: 26.8vw;
+    top: 84vh;
+}
+
+.computerHover{
+    width: 79px;
+    height: 60px;
+    right: 28.4vw;
+    top: 40.5vh;
+}
+
+
+.bordHover {
+    width: 140px;
+    height: 110px;
+    left: 8vw;
+    top: 31vh;
+}
+
+
+.bordRechtsHover {
+    width: 80px;
+    height: 100px;
+    right: 10.8vw;
+    top: 36vh;
+    
+/*
+    width: 70px;
+    height: 100px;
+    right: 11.3vw;
+    top: 36.3vh;
+*/
+}
+
+
+.folderHover {
+    width: 125px;
+    height: 100px;
+    right: 2.5vw;
+/*    top: 82.9vh;*/
+     top: 81vh;
+}
+
+.bakjeHover {
+    width: 210px;
+    height: 100px;
+    right: 39.7vw;
+/*    top: 82.9vh;*/
+     top: 74vh;
+}
+
+
+/*----------------------Gele buttons-------------------*/
+
+.yellowButton{
+    width: 70px;
+    height: 70px;
+    position: absolute;
+}
+
+#buttonBrilInfo, #buttonBrilHint, #buttonPCInfo, #buttonPCHint, #buttonRechtsBordHint, #buttonRechtsBordInfo {
+    display: none;
+}
+
+
+/*----------------------bril buttons-------------------*/
+
+#buttonBrilInfo {
+    left: 26.5vw;
+    top: 66vh;
+}
+
+#buttonBrilHint {
+    left: 34.2vw;
+    top: 74.7vh;
+}
+
+
+/*----------------------PC buttons-------------------*/
+
+#buttonPCInfo {
+    right: 32.6vw;
+    top: 24.9vh;
+}
+
+#buttonPCHint {
+    right: 23.7vw;
+    top: 25.2vh;
+}
+
+
+/*----------------------bord buttons-------------------*/
+
+#buttonRechtsBordInfo {
+    right: 5.5vw;
+    top: 28.1vh;
+}
+
+#buttonRechtsBordHint {
+    right: 13.1vw;
+    top: 19.5vh;
+}
+
+
+/*-------------------MODAL---------------------*/
+
+.modal {
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation-name: openmodal;
+    animation-duration: 0.3s;
+}
+
+
+.modal-content {
+    background-color: rgba(234, 245, 96, 0.8);
+    margin: 5% auto;
+/*    padding: 20px;*/
+    max-width: 80%;
+    height: 600px;
+    color: black;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+.close-modal{ 
+    float: left;
+    font-size: 2.5em;
+    padding: 15px 0 0 15px;
+    color: #000;
+    cursor: pointer;
+}
+
+
+@keyframes openmodal {
+    from {
+        opacity: 0;
+    }
+    
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+/*
+.closeButton{ 
+    float: right;
+    font-size: 4em;
+    padding-right: 20px;
+    color: #fff;
+    animation-duration: 0.3s;
+}
+*/
+
+
+
+
+
+/*----------Multi media alleen op laptop----------*/
+
+@media only screen and (max-width: 1180px), (max-height: 650px) {
+    #sizeWarning {
+        display: block;
+      }
+
+    #pagina2 {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1580px), (min-height: 885px) {
+    #sizeWarning2 {
+        display: block;
+      }
+
+    #pagina2 {
+        display: none;
+    }
+}
