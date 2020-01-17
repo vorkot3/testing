@@ -1,9 +1,17 @@
 /*---------waveform----------*/
-#waveform{
+#startPageWave{
     width: 50%;
     margin: 0 auto;
 }
 
+
+#page2Wave{
+    display: none;
+}
+
+#bril1Wave {
+    width: 10%;
+}
 
 
 /*---------waarschuwing voor kleine schermen----------*/
@@ -58,9 +66,14 @@ a {
 
 .playBtn img, .pauseBtn img {
     width: 30px;
-    height: 30px;
+    height: 30px;  
+}
+
+
+#startschermPlay img, #startschermPause img{
     margin-left: 50px;
 }
+
 
 .buttons {
     text-align: center;
@@ -232,14 +245,21 @@ a {
 }
 
 
-.modal-content {
+.modal-window {
     background-color: rgba(234, 245, 96, 0.8);
-    margin: 5% auto;
+    margin: 2% auto;
 /*    padding: 20px;*/
-    max-width: 80%;
-    height: 600px;
+    max-width: 70%;
+    max-height: 90%;
     color: black;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.modal-content {
+    padding: 7%;
+    text-align: center;
 }
 
 .close-modal{ 
@@ -248,6 +268,7 @@ a {
     padding: 15px 0 0 15px;
     color: #000;
     cursor: pointer;
+    position: fixed;
 }
 
 
@@ -263,15 +284,50 @@ a {
 
 
 
-/*
-.closeButton{ 
-    float: right;
-    font-size: 4em;
-    padding-right: 20px;
-    color: #fff;
-    animation-duration: 0.3s;
+/*------------ MODAL CONTENT OPMAAK --------------*/
+
+.modal-content h1{
+    font-size: 3em;
 }
-*/
+
+.modal-content p{
+    margin-top: 60px;
+    font-size: 1.5em;
+    padding: 0 10% 0 10%;
+}
+
+#brilHintFoto {
+    margin-top: 50px;
+    height: 40%;
+    width: 40%;
+}
+
+.audioContainer {
+    width: 100%;
+    height: auto;
+
+}
+
+.fotoContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.hintBril {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.verdachtePic {
+    width: 75%;
+    height: auto;
+    margin: 70px 20px 50px 20px;
+}
+
+
+
+
 
 
 

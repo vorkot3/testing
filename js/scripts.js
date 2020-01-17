@@ -1,39 +1,23 @@
-//---------------------------folder modal-----------------------------------//
+//---------------------------MODALS-----------------------------------//
 
 //add modal
-$(".folderHover").click(function(e) {
+$(".folderHover, .bakjeHover, .yellowButton, .bordHover").click(function(e) {
     
-    $('body').append('<div class="modal"> <div class="modal-content"> <span class="close-modal"> &#129120; </span> </div> </div>');
+    $('body').append('<div class="modal"> <div class="modal-window"> <span class="close-modal">  &#129120; </span>  <div class="modal-content"> </div> </div> </div>');
+    
+    
+    $.ajax({
+            url: $(this).attr('href'),
+            success: function(data){
+                console.log(data);
+                $('.modal-content').append(data);
+            }
+        })
+
 
     e.preventDefault(); 
 });
 
-$(".bakjeHover").click(function(e) {
-    
-    $('body').append('<div class="modal"> <div class="modal-content"> <span class="close-modal"> &#129120; </span> </div> </div>');
-
-    e.preventDefault(); 
-});
-
-
-//modal voor gele knopjes;
-
-
-$(".yellowButton" ).click(function(e) {
-    
-    $('body').append('<div class="modal"> <div class="modal-content"> <span class="close-modal">&#129120;</span> </div> </div>')
-//
-//    $.ajax({
-//            url: $(this).attr('href'),
-//            success: function(data){
-//                console.log(data);
-//                $('.modal-content').append(data);
-//            }
-//        })
-//
-        e.preventDefault();     
-
-});
 
 //close modal
 
@@ -143,25 +127,8 @@ $(".bordHover").hover(function() {
 switchImageBord();
 
 
-$(".bordHover").on("click", function(e) {
-    $(this).off("mouseenter mouseleave");
-    
-      $("#backgroundImage").attr('src', 'img/bordclickglow.png');
-    
-      $("#buttonBordHint, #buttonBordInfo").css("display", "inline");
-    
-    //zet andere fotos terug naar niet-geklikte staat
-    $("#brilFoto").attr('src', 'img/glass.png');
-    $("#computerFoto").attr('src', 'img/computer.png');
-    $("#bordRechtsFoto").attr('src', 'img/fotorechterbord.png');
-    
-     e.preventDefault();
-       
-});
 
-
-
-//-------------------------------------RECHTS BORD----------------------------------------//
+//-------------------------------------RECHTS BORD FOTOS----------------------------------------//
 
 function switchImageRechtsBord() {
 $(".bordRechtsHover").hover(function() {
@@ -233,7 +200,7 @@ switchImageBakje();
 
 //maakt wave aan. ID waarna verwijst, kleur, alle audio in 1 golf.
 var wavesurfer = WaveSurfer.create({
-    container: '#waveform',
+    container: '.waveform',
     waveColor: "white",
     fillParent: true,
     progressColor: "lightblue",
@@ -242,15 +209,23 @@ var wavesurfer = WaveSurfer.create({
 });
 
 
-//$("#meisjePlay").click(function(event){
-//    event.preventDefault();
-//    wavesurfer.load('audio/song.mp3');
-//    wavesurfer.play();
-//     
-//});
+//fatsoenlijke waveform bij resizen
+$(window).on('resize', function(){
+    
+    var currentProgress = wavesurfer.getCurrentTime() / wavesurfer.getDuration();
+             
+    wavesurfer.empty();
+    wavesurfer.drawBuffer();
+    wavesurfer.seekTo(currentProgress);
+});
 
 
-//buttons
+
+
+
+
+//----------------------------AUDIO STARTSCHERM----------------------------------//
+
 $("#startchermPlay").click(function(event){
     event.preventDefault();
     wavesurfer.play();
@@ -267,18 +242,54 @@ $("#startschermPause").click(function(event){
     wavesurfer.pause();
 });
 
+wavesurfer.load('audio/song.mp3');
 
-$(window).on('resize', function(){
+
+
+
+//--------------------------BRIL AUDIO-----------------------------------//
+
+$("body").on('click', '#hintBril1Play', function(event){
     
-    var currentProgress = wavesurfer.getCurrentTime() / wavesurfer.getDuration();
-             
-    wavesurfer.empty();
-    wavesurfer.drawBuffer();
-    wavesurfer.seekTo(currentProgress);
+    var wavesurfer = WaveSurfer.create({
+        container: '#bril1Wave',
+        backend: 'MediaElement', 
+    });
+    
+    event.preventDefault();
+    wavesurfer.load('audio/song.mp3');
+    wavesurfer.play();
+});
+
+$("body").on('click', '#hintBril2Play', function(event){
+    
+    var wavesurfer = WaveSurfer.create({
+        container: '#lol',
+        backend: 'MediaElement', 
+    });
+    
+    event.preventDefault();
+    wavesurfer.load('audio/song.mp3');
+    wavesurfer.play();
+});
+
+$("body").on('click', '#hintBril3Play', function(event){
+    event.preventDefault();
+    wavesurfer.load('audio/song.mp3');
+    wavesurfer.play();
 });
 
 
-wavesurfer.load('audio/song.mp3');
+//buttons
+
+//$(".computerHover, .brilHover").click(function(event){
+//    event.preventDefault();
+//    wavesurfer.load('audio/song.mp3');
+//    wavesurfer.play();
+//    
+//});
+
+
 
 
 
