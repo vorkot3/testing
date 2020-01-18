@@ -10,7 +10,7 @@
 }
 
 #bril1Wave {
-    width: 10%;
+    display: none;
 }
 
 
@@ -116,20 +116,20 @@ a {
 
 
 
-.brilHover, .computerHover, .bordHover, .folderHover, .bordRechtsHover, .bakjeHover {
+.hover{
     position: absolute;
     z-index: 1;
 }
 
 
-.brilHover {
+.bril .hover {
     width: 70px;
     height: 45px;
     left: 26.8vw;
     top: 84vh;
 }
 
-.computerHover{
+.computer .hover{
     width: 79px;
     height: 60px;
     right: 28.4vw;
@@ -137,7 +137,7 @@ a {
 }
 
 
-.bordHover {
+.bord .hover {
     width: 140px;
     height: 110px;
     left: 8vw;
@@ -145,7 +145,7 @@ a {
 }
 
 
-.bordRechtsHover {
+.bordRechts .hover {
     width: 80px;
     height: 100px;
     right: 10.8vw;
@@ -160,7 +160,7 @@ a {
 }
 
 
-.folderHover {
+.folder .hover {
     width: 125px;
     height: 100px;
     right: 2.5vw;
@@ -168,7 +168,7 @@ a {
      top: 81vh;
 }
 
-.bakjeHover {
+.bakje .hover {
     width: 210px;
     height: 100px;
     right: 39.7vw;
@@ -186,7 +186,7 @@ a {
 }
 
 #buttonBrilInfo, #buttonBrilHint, #buttonPCInfo, #buttonPCHint, #buttonRechtsBordHint, #buttonRechtsBordInfo {
-    display: none;
+    display: inline;
 }
 
 
@@ -310,6 +310,7 @@ a {
 
 .fotoContainer {
     position: relative;
+    height: auto;
     display: inline-block;
 }
 

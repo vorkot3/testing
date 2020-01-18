@@ -14,7 +14,10 @@
          <a class="playBtn hintBril" id="hintBril1Play">
             <img src="img/playBtn.png" alt="playBtn">
          </a>
+        
+         
     </div>
+    
     
     <div class="fotoContainer">
         <img class="verdachtePic" src="../img/placeholderPFP.png">
@@ -30,8 +33,7 @@
          </a>
     </div>
     
-    
-    <div class="waveform" id="bril1Wave"></div>
+    <div class="waveform" id="bril1Wave"></div> 
     <div class="waveform" id="lol2"></div>
     <div class="waveform" id="lol3"></div>
     

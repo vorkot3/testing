@@ -32,7 +32,7 @@
         <div id="pagina2Background">
             
             
-              <div class="waveform"  id="page2Wave"> </div>
+              <div class="waveform"> </div>
 
 <!--
                 <div class="buttons">
@@ -59,7 +59,7 @@
                 <a href="templates/computerHintTemplate.php" class="yellowButton" id="buttonPCHint"></a>
                 <a href="templates/computerInfoTemplate.php" class="yellowButton" id="buttonPCInfo"></a>       
                 
-                <a class="computerHover">
+                <a class="hover" data-object="computer">
                     <img id="computerFoto" src="img/computer.png">
                 </a>
             </div>
@@ -71,7 +71,7 @@
                 <a href="templates/brilHintTemplate.php" class="yellowButton" id="buttonBrilHint"></a>
                 <a href="templates/brilInfoTemplate.php" class="yellowButton" id="buttonBrilInfo"></a>                
                 
-                <a class="brilHover">
+                <a class="hover" data-object="bril">
                     <img id="brilFoto" src="img/glass.png">
                 </a>
             </div>
@@ -80,7 +80,7 @@
 
             <div class="bord" >  
                 
-                <a href="templates/bordTemplate.php" class="bordHover">
+                <a href="templates/bordTemplate.php" class="hover" data-object="bord">
                     <img id="bordFoto" src="img/bord.png">
                 </a>    
             </div>
@@ -91,7 +91,7 @@
                 <a href="templates/fotosHintTemplate.php" class="yellowButton" id="buttonRechtsBordHint"></a>
                 <a href="templates/fotosInfoTemplate.php" class="yellowButton" id="buttonRechtsBordInfo"></a>    
                 
-                <a class="bordRechtsHover">
+                <a class="hover" data-object="foto">
                     <img id="bordRechtsFoto" src="img/fotorechterbord.png">
                 </a>    
             </div>
@@ -99,7 +99,7 @@
             
             <div class="bakje" >  
                 
-                <a href="templates/bakjeTemplate.php" class="bakjeHover">
+                <a href="templates/bakjeTemplate.php" class="hover" data-object="bakje">
                     <img id="bakjeFoto" src="img/bakje.png">
                 </a>    
             </div>
@@ -107,7 +107,7 @@
             
             <div class="folder" >
                 
-                <a href="templates/folderTemplate.php" class="folderHover">
+                <a href="templates/folderTemplate.php" class="hover" data-object="folder">
                     <img id="folderFoto" src="img/folder.png">
                 </a>    
             </div>
@@ -120,6 +120,9 @@
 <script src="js/jquery-ui.min.js"></script>
 <script src="https://unpkg.com/wavesurfer.js"></script>
 <script src="js/scripts.js"></script>  
+<script>
+    $(".waveform").css("display", "none");
+</script>
 
 </body> 
 </html>

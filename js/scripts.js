@@ -1,7 +1,114 @@
+//Davids shit :p
+
+
+
+/*
+HTML DOM object events:
+
+click
+hover
+mouseenter
+mouseleave
+mouseup
+mousedown
+
+*/
+ var objectsJSON = {
+    "background":{
+        "active":false
+    },
+    "bril":{
+        "active": false,
+        "img1":"img/glass.png",
+        "img2":"img/glassglow.png",
+        "img3": "img/bureau.png",
+        "img4": "img/glassesclickglow.png",
+      
+    },
+    "computer":{
+        "active": false,
+        "img1":"img/computer.png",
+        "img2":"img/computerglow.png",
+        "img3": "img/bureau.png",
+        "img4": "img/computerclickglow.png",
+       
+    },
+     "foto":{
+        "active": false,
+        "img1":"img/fotorechterbord.png",
+        "img2":"img/fotorechterbordglow.png",
+        "img3": "img/bureau.png",
+        "img4": "img/bordclickglow.png",
+      
+    },
+     "bakje":{
+        "active": false,
+        "img1":"img/bakje.png",
+        "img2":"img/bakjeglow.png",
+      
+    },
+     "folder":{
+        "active": false,
+        "img1":"img/folder.png",
+        "img2":"img/folderglow.png",
+      
+    },
+     
+     "bord":{
+        "active": false,
+        "img1":"img/bord.png",
+        "img2":"img/bordglow.png",
+      
+    }
+}
+
+function initHoverListeners(){
+  console.log(objectsJSON);
+    $('.hover').hover(function(){
+        var itemindex = $(this).attr("data-object");
+        console.log(itemindex);
+        $("#"+itemindex+"Foto").attr('src', objectsJSON[itemindex].img2);
+    },   
+    function() {
+        var itemindex = $(this).attr("data-object");
+        $("#"+itemindex+"Foto").attr('src', objectsJSON[itemindex].img1);
+    });
+}
+
+
+initHoverListeners();
+
+
+function initClickListeners(){
+    $('.hover').click(function(){
+    var itemindex = $(this).attr("data-object");
+    
+       //doe class erbij met $(this) 
+        $("#backgroundImage").addClass("back");
+        //switch de image net als in initHover
+     $("#backgroundImage").attr('src', objectsJSON[itemindex].img4);
+    });
+    
+    $('.back').click(function(){
+    var itemindex = $(this).attr("data-object");
+
+        //haal class weg met $(this)
+       $("#backgroundImage").removeClass("back");
+        
+        //switch image weer net als in initHover
+        $("#backgroundImage").attr('src', objectsJSON[itemindex].img3);
+    });
+}
+
+initClickListeners();
+
+
+
+
 //---------------------------MODALS-----------------------------------//
 
 //add modal
-$(".folderHover, .bakjeHover, .yellowButton, .bordHover").click(function(e) {
+$(".folder .hover, .bakje .hover, .yellowButton, .bord .hover").click(function(e) {
     
     $('body').append('<div class="modal"> <div class="modal-window"> <span class="close-modal">  &#129120; </span>  <div class="modal-content"> </div> </div> </div>');
     
@@ -29,7 +136,7 @@ $(".folderHover, .bakjeHover, .yellowButton, .bordHover").click(function(e) {
 
 
 //--------------------------------PC----------------------------------------//
-
+/*
 function switchImagePC() {
 $(".computerHover").hover(function() {
    $("#computerFoto").attr('src', 'img/computerglow.png')
@@ -193,7 +300,7 @@ $(".bakjeHover").hover(function() {
 // attach the hover events when page loads
 switchImageBakje();
 
-
+*/
 
 
 //--------------------------------WAVE SURFER----------------------------------------//
@@ -273,7 +380,7 @@ $("body").on('click', '#hintBril2Play', function(event){
     wavesurfer.play();
 });
 
-$("body").on('click', '#hintBril3Play', function(event){
+$("#hintBril3Play").click(function(event){
     event.preventDefault();
     wavesurfer.load('audio/song.mp3');
     wavesurfer.play();
